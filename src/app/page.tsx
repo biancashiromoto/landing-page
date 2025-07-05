@@ -1,7 +1,10 @@
+import Navbar from "@/app/ui/navbar/navbar";
+
 export default function Home() {
   return (
-    <div>
-      <h1>Hello world!</h1>
-    </div>
+    <main>
+      <Navbar />
+      <div style={{ height: "250dvh" }} />
+    </main>
   );
 }
