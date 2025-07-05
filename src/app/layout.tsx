@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Provider } from "@/context/Provider";
 
 export const metadata: Metadata = {
   title: "FIAP",
@@ -12,7 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }
