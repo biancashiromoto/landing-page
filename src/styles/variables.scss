@@ -1,3 +1,45 @@
 $color-dark: #202121;
 $about: #393e41;
 $primary-red: #ed145b;
+
+@mixin fade-move($name, $fromY, $toY) {
+  @keyframes #{$name} {
+    from {
+      opacity: 0;
+      transform: translateY(#{$fromY});
+    }
+    to {
+      opacity: 1;
+      transform: translateY(#{$toY});
+    }
+  }
+}
+
+@function lighten-color($color, $amount: 10%) {
+  @return lighten($color, $amount);
+}
+
+@mixin flashColor($name, $color-normal, $color-flash) {
+  @keyframes #{$name} {
+    0% {
+      color: $color-normal;
+    }
+    50% {
+      color: $color-flash;
+    }
+    100% {
+      color: $color-normal;
+    }
+  }
+}
+
+@mixin blurFocus($name, $from: 3px, $to: 0px) {
+  @keyframes #{$name} {
+    0% {
+      filter: blur(#{$from});
+    }
+    100% {
+      filter: blur(#{$to});
+    }
+  }
+}
