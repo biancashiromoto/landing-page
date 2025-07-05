@@ -1,0 +1,24 @@
+@import "@/styles/variables.scss";
+@import "@/styles/breakpoints.scss";
+
+.navbar {
+  z-index: 1000;
+  height: fit-content;
+  background-color: unset;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.2s, margin-top 0.2s;
+}
+
+.scrolled {
+  background-color: $color-dark;
+  margin-top: 0.125rem;
+}
+
+.logoFiap {
+  width: clamp(5.25rem, 8vw, 9rem);
+  height: clamp(1.4375rem, 2vw, 2.4375rem);
+  margin-top: clamp(2.25rem, 4vw, 3rem);
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
