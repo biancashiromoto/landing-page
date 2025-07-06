@@ -7,6 +7,7 @@ type QuestionProps = QuestionType & {
   isOpen: boolean;
   onClick: () => void;
   onMouseEnter: () => void;
+  onMouseLeave: () => void;
 };
 
 const Question = ({
@@ -15,14 +16,16 @@ const Question = ({
   isOpen,
   onClick,
   onMouseEnter,
+  onMouseLeave,
 }: QuestionProps) => {
   return (
     <div
       className={`${styles.question} ${isOpen ? styles.open : ""}`}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
-      <h3>{question}</h3>
+      <summary>{question}</summary>
       <p>{answer}</p>
     </div>
   );

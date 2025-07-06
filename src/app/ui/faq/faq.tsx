@@ -4,8 +4,10 @@ import { useState } from "react";
 import styles from "./faq.module.scss";
 import { questions, QuestionType } from "./questions";
 import Question from "./question/question";
+import { useCustomContext } from "@/context/Provider";
 
 const FAQ = () => {
+  const { screenWidth } = useCustomContext();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -20,8 +22,12 @@ const FAQ = () => {
             key={index}
             {...question}
             isOpen={openIndex === index}
-            onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            onMouseEnter={() => setOpenIndex(index)}
+            onClick={() =>
+              screenWidth <= 768 &&
+              setOpenIndex(openIndex === index ? null : index)
+            }
+            onMouseEnter={() => screenWidth > 768 && setOpenIndex(index)}
+            onMouseLeave={() => screenWidth > 768 && setOpenIndex(null)}
           />
         ))}
       </div>
