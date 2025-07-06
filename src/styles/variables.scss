@@ -8,6 +8,7 @@ $color-white: #fff;
 $color-black: #000;
 $color-red: #f80d5a;
 $color-gray: #949b99;
+$color-offwhite: #d5dbd3;
 
 @mixin fade-move($name, $fromY, $toY) {
   @keyframes #{$name} {

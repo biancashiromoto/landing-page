@@ -15,7 +15,7 @@ type ContextType = {
 const Context = createContext({} as ContextType);
 
 export function Provider({ children }: { children: ReactNode }) {
-  const [screenWidth, setScreenWidth] = useState<number>(0);
+  const [screenWidth, setScreenWidth] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
