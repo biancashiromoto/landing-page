@@ -1,10 +1,11 @@
-@import "@/styles/variables.scss";
-@import "@/styles/breakpoints.scss";
+@use "@/styles/variables.scss" as *;
+@use "@/styles/breakpoints.scss" as *;
+@use "sass:color";
 
 @include fade-move(fadeDownFirst, -10px, 0);
 @include fade-move(fadeDown, -20px, 0);
 @include fade-move(fadeUp, 30px, 0);
-@include flashColor(flashAbout, $about, lighten-color($about, 20%));
+@include flashColor(flashAbout, $about, color.adjust($about, $lightness: 20%));
 @include blurFocus(blur);
 
 .header {
