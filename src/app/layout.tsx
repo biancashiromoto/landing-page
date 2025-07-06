@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 import { Provider } from "@/context/Provider";
+import "typeface-pt-sans";
 
 export const metadata: Metadata = {
   title: "FIAP",
