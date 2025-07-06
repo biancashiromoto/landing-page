@@ -11,6 +11,20 @@
     }
   }
 
+  &:hover::before,
+  &.selected::before {
+    background-color: $color-red;
+  }
+
+  &:hover,
+  &.selected {
+    p.course-type,
+    p.course-name {
+      color: $color-red;
+      transition: color 0.5s;
+    }
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -50,6 +64,12 @@
     padding-bottom: 0;
     width: 50rem;
 
+    &:last-of-type {
+      &::before {
+        display: block;
+      }
+    }
+
     p.course-type {
       font-size: 0.8125rem;
       line-height: 0.75rem;
@@ -65,20 +85,6 @@
       font-weight: 400;
       color: $color-medium;
       transition: color 0.2s;
-    }
-
-    &:hover::before,
-    &.selected::before {
-      background-color: $color-red;
-    }
-
-    &:hover,
-    &.selected {
-      p.course-type,
-      p.course-name {
-        color: $color-red;
-        transition: color 0.5s;
-      }
     }
   }
 }
