@@ -36,20 +36,13 @@ $color-gray--dark: #566165;
   }
 }
 
-@function lighten-color($color, $amount: 10%) {
-  @return color.adjust($color, $lightness: 20%);
-}
-
-@mixin flashColor($name, $color-normal, $color-flash) {
+@mixin fadeOut($name: fade-out) {
   @keyframes #{$name} {
-    0% {
-      color: $color-normal;
+    from {
+      opacity: 1;
     }
-    50% {
-      color: $color-flash;
-    }
-    100% {
-      color: $color-normal;
+    to {
+      opacity: 0;
     }
   }
 }
@@ -61,17 +54,6 @@ $color-gray--dark: #566165;
     }
     100% {
       filter: blur(#{$to});
-    }
-  }
-}
-
-@mixin scrollHorizontally($name, $direction: left) {
-  @keyframes #{$name} {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(if($direction == left, -100%, 100%));
     }
   }
 }

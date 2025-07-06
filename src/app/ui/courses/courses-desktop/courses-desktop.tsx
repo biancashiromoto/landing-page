@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import CourseItem from "../course-item/course-item";
 import { Course, SubjectType } from "../subjects";
 import styles from "./courses-desktop.module.scss";
@@ -7,17 +8,43 @@ type CoursesDesktopProps = {
 };
 
 const CoursesDesktop = ({ selectedSubject }: CoursesDesktopProps) => {
+  const [displayedSubject, setDisplayedSubject] = useState<SubjectType | null>(
+    selectedSubject
+  );
+  const [fadeState, setFadeState] = useState<"fade-in" | "fade-out" | "">(
+    selectedSubject ? "fade-in" : ""
+  );
+
+  useEffect(() => {
+    if (!selectedSubject) {
+      setFadeState("fade-out");
+      setTimeout(() => {
+        setDisplayedSubject(null);
+        setFadeState("");
+      }, 500);
+      return;
+    }
+    if (displayedSubject && selectedSubject.id !== displayedSubject.id) {
+      setFadeState("fade-out");
+      setTimeout(() => {
+        setDisplayedSubject(selectedSubject);
+        setFadeState("fade-in");
+      }, 500);
+    } else if (!displayedSubject && selectedSubject) {
+      setDisplayedSubject(selectedSubject);
+      setFadeState("fade-in");
+    }
+  }, [selectedSubject, displayedSubject]);
+
   return (
     <div
-      key={selectedSubject?.id ?? "empty"}
+      key={displayedSubject?.id ?? "empty"}
       className={
-        selectedSubject
-          ? `${styles["course-content"]} ${styles.show}`
-          : styles["course-content"]
+        `${styles["course-content"]} ` + (fadeState ? styles[fadeState] : "")
       }
     >
-      <h3>{selectedSubject?.subject}</h3>
-      {selectedSubject?.items.map((item: Course) => (
+      <h3>{displayedSubject?.subject}</h3>
+      {displayedSubject?.items.map((item: Course) => (
         <CourseItem key={item.id} {...item} />
       ))}
     </div>

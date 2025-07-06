@@ -22,8 +22,9 @@
   width: 9rem;
   height: 2.4375rem;
   transform: translateY(2rem);
+  transition: width 0.3s, height 0.3s;
 
-  @include respond(xl) {
+  @include respond(lg) {
     width: 7.5rem;
     height: 2rem;
   }
