@@ -27,6 +27,7 @@
     text-align: right;
     top: -4.5rem;
     right: 1.1875rem;
+    z-index: -1;
   }
 
   .title {
@@ -65,6 +66,7 @@
 
     .title {
       transform: translateX(-2.75%);
+
       h1 {
         font-size: 2.25rem;
 
@@ -92,9 +94,39 @@
   }
 }
 
+@include respond(xl) {
+  .header {
+    span {
+      font-size: 15rem;
+    }
+
+    .title {
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+@include respond(3xl) {
+  .header {
+    span {
+      font-size: 20rem;
+    }
+
+    .title {
+      h1 {
+        font-size: 5rem;
+        line-height: 5rem;
+      }
+    }
+  }
+}
+
 @include respond(5xl) {
   .header {
     top: 60dvh;
+
     span {
       font-size: 21.875rem;
       letter-spacing: -0.1rem;
