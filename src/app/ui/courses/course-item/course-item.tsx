@@ -1,6 +1,6 @@
 "use client";
 
-import { Course } from "@/text";
+import { Course } from "@/app/ui/courses/areas";
 import styles from "./course-item.module.scss";
 
 const CourseItem = (course: Course) => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { Course, CourseArea as CourseAreaType } from "@/text";
+import { Course, CourseAreaType } from "@/app/ui/courses/areas";
 import CourseItem from "../course-item/course-item";
 import styles from "./course-area.module.scss";
 import { useState } from "react";
