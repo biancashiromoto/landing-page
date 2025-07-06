@@ -7,8 +7,12 @@
 @include fadeIn();
 
 .intro {
-  height: 100dvh;
+  height: 50dvh;
   margin-top: 100dvh;
+
+  @include respond(xl) {
+    height: auto;
+  }
 
   .scroll-container {
     width: 100vw;
