@@ -3,15 +3,26 @@
 
 .course-item {
   position: relative;
+  padding-bottom: 1rem;
+
+  &:last-of-type {
+    &::before {
+      display: none;
+    }
+  }
+
   &::before {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
-    top: 0;
-    width: 100%;
+    bottom: 0;
     height: 1px;
-    background-color: $color-medium;
+    background-color: $color-light;
+    border-radius: 1px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 0.2s;
+    z-index: 1;
   }
 
   p.course-type {
@@ -27,21 +38,16 @@
     font-family: "Pt Sans", sans-serif;
     line-height: 1.1875rem;
     font-weight: 400;
-    margin-bottom: 1.14rem;
     letter-spacing: 0;
   }
 
-  @include respond(lg) {
-    &:first-of-type:before {
-      content: "";
-      display: none;
-    }
-
+  @include respond(xl) {
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
     justify-content: start;
     height: 3.75rem;
+    padding-bottom: 0;
 
     p.course-type {
       font-size: 0.8125rem;
@@ -58,9 +64,19 @@
       font-weight: 400;
       color: $color-medium;
       transition: color 0.2s;
+    }
 
-      &:hover {
-        color: $color-white;
+    &:hover::before,
+    &.selected::before {
+      background-color: $color-red;
+    }
+
+    &:hover,
+    &.selected {
+      p.course-type,
+      p.course-name {
+        color: $color-red;
+        transition: color 0.5s;
       }
     }
   }
