@@ -1,6 +1,6 @@
 "use client";
 
-import { Course, CourseArea as CourseAreaType, courses } from "@/text";
+import { Course, CourseAreaType, areas } from "@/app/ui/courses/areas";
 import CourseArea from "./course-area/course-area";
 import CourseItem from "./course-item/course-item";
 import styles from "./courses.module.scss";
@@ -20,7 +20,7 @@ const Courses = () => {
             <p className={styles["subtitle"]}>Cursos de curta duração</p>
           </div>
           <nav className={styles["course-areas"]}>
-            {courses.map((course: CourseAreaType) => (
+            {areas.map((course: CourseAreaType) => (
               <p
                 key={course.id}
                 onClick={() => handleAreaClick(course.area)}
@@ -57,7 +57,7 @@ const Courses = () => {
         <p className={styles["subtitle"]}>Cursos de curta duração</p>
       </div>
       <div>
-        {courses.map((course: CourseAreaType) => {
+        {areas.map((course: CourseAreaType) => {
           return <CourseArea key={course.id} courseArea={course} />;
         })}
       </div>

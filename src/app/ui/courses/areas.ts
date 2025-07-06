@@ -6,13 +6,13 @@ export type Course = {
   id: string;
 };
 
-export type CourseArea = {
+export type CourseAreaType = {
   area: string;
   items: Course[];
   id: string;
 };
 
-export const areas: CourseArea[] = [
+export const areas: CourseAreaType[] = [
   {
     area: "Tecnologia",
     id: "TECH",
