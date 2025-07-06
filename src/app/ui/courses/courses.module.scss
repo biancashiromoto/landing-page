@@ -17,8 +17,8 @@
 
 .courses {
   position: relative;
-  margin: 25rem 1rem 25rem 1.95rem;
-  height: auto;
+  margin: 25rem 1rem 0 1.95rem;
+  height: 100dvh;
 
   h2,
   p,
@@ -65,7 +65,7 @@
     align-items: flex-start;
     justify-content: space-between;
     max-width: 80dvw;
-    margin: 20dvh auto 5rem;
+    margin: 50dvh auto 5rem;
     transform: translateX(-4.4rem);
 
     h2 {
@@ -132,9 +132,5 @@
 
   @include respond(2xl) {
     max-width: 70dvw;
-
-    .course-content {
-      max-width: 50dvw;
-    }
   }
 }
