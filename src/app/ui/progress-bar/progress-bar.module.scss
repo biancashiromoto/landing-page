@@ -12,7 +12,7 @@
 
 .progressBarFill {
   height: 100%;
-  background-color: $primary-red;
+  background-color: $color-red;
   transition: width 0.2s ease-out, background-color 0.2s;
   border-radius: 0.25rem;
   transform: translateY(-1px);
