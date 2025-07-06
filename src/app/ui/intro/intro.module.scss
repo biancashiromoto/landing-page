@@ -92,6 +92,7 @@
       width: 77dvw;
       height: auto;
       max-width: 1500px;
+      opacity: 0.3;
     }
 
     .text-container {
@@ -112,8 +113,8 @@
         color: transparent;
         opacity: 0;
 
-        -webkit-text-stroke: 2px $color-light;
-        text-stroke: 2px $color-light;
+        -webkit-text-stroke: 2px $color-gray--dark2;
+        text-stroke: 2px $color-gray--dark2;
 
         transition: transform 0.5s ease-out;
 
