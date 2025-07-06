@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FIAP Landing Page
 
-## Getting Started
+Este projeto faz parte do desafio técnico da FIAP. Consiste em uma Landing Page desenvolvida com Next.js e TypeScript, utilizando SCSS para estilização e responsividade. O objetivo é fornecer uma base visual moderna e eficiente para apresentação de produtos, serviços ou campanhas.
 
-First, run the development server:
+## Funcionalidades
+
+- Layout responsivo e moderno
+- Animações de rolagem e transição
+- Uso de fontes personalizadas (Gotham, PT Sans)
+- Estrutura modular de componentes
+- Otimização de imagens e assets
+
+## Estrutura do Projeto
+
+```
+eslint.config.mjs
+next-env.d.ts
+next.config.ts
+package.json
+README.md
+tsconfig.json
+public/
+  fonts/
+  img/
+src/
+  app/
+    globals.scss
+    layout.tsx
+    page.tsx
+    ui/
+  assets/
+    img/
+    svg/
+  context/
+  styles/
+    breakpoints.scss
+    variables.scss
+```
+
+## Instalação
+
+1. Clone o repositório:
+
+   ```bash
+   git clone <url-do-repositorio>
+   ```
+
+2. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+## Como rodar o projeto
+
+Execute o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse `http://localhost:3000` no navegador para visualizar a landing page.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts Disponíveis
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` — Inicia o servidor de desenvolvimento
+- `npm run build` — Gera a build de produção
+- `npm run start` — Inicia o servidor em modo produção
+- `npm run lint` — Executa o linter
 
-## Learn More
+## Personalização
 
-To learn more about Next.js, take a look at the following resources:
+- As variáveis de estilo estão em `src/styles/variables.scss`.
+- Os breakpoints de responsividade estão em `src/styles/breakpoints.scss`.
+- Imagens e fontes podem ser adicionadas nas pastas `public/img` e `public/fonts`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Licença
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Este projeto está sob a licença MIT.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Desenvolvido por Bianca Shiromoto.
