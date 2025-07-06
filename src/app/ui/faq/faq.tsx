@@ -4,10 +4,13 @@ import { useState } from "react";
 import styles from "./faq.module.scss";
 import { questions, QuestionType } from "./questions";
 import Question from "./question/question";
-import { useCustomContext } from "@/context/Provider";
+
+const isTouchDevice =
+  typeof window !== "undefined" &&
+  ("ontouchstart" in window ||
+    (window.matchMedia && window.matchMedia("(pointer: coarse)").matches));
 
 const FAQ = () => {
-  const { screenWidth } = useCustomContext();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -23,11 +26,10 @@ const FAQ = () => {
             {...question}
             isOpen={openIndex === index}
             onClick={() =>
-              screenWidth <= 768 &&
-              setOpenIndex(openIndex === index ? null : index)
+              isTouchDevice && setOpenIndex(openIndex === index ? null : index)
             }
-            onMouseEnter={() => screenWidth > 768 && setOpenIndex(index)}
-            onMouseLeave={() => screenWidth > 768 && setOpenIndex(null)}
+            onMouseEnter={() => !isTouchDevice && setOpenIndex(index)}
+            onMouseLeave={() => !isTouchDevice && setOpenIndex(null)}
           />
         ))}
       </div>

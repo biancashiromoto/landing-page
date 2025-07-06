@@ -9,6 +9,7 @@
   width: 100%;
   text-align: center;
   transition: background-color 0.2s, margin-top 0.2s;
+  height: 5rem;
 }
 
 .scrolled {
@@ -17,9 +18,24 @@
 }
 
 .logoFiap {
-  width: clamp(5.25rem, 8vw, 9rem);
-  height: clamp(1.4375rem, 2vw, 2.4375rem);
-  margin-top: clamp(2.25rem, 4vw, 3rem);
-  margin-bottom: clamp(1.25rem, 3vw, 2rem);
   cursor: pointer;
+  width: 9rem;
+  height: 2.4375rem;
+  transform: translateY(2rem);
+  transition: width 0.3s, height 0.3s;
+
+  @include respond(lg) {
+    width: 7.5rem;
+    height: 2rem;
+  }
+
+  @include respond(3xl) {
+    width: 6rem;
+    height: 1.625rem;
+  }
+
+  @include respond(5xl) {
+    width: 5.25rem;
+    height: 1.4375rem;
+  }
 }

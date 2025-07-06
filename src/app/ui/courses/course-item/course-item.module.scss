@@ -13,14 +13,14 @@
 
   &:hover::before,
   &.selected::before {
-    background-color: $color-red;
+    background-color: $color-red--primary;
   }
 
   &:hover,
   &.selected {
     p.course-type,
     p.course-name {
-      color: $color-red;
+      color: $color-red--primary;
       transition: color 0.5s;
     }
   }
@@ -32,7 +32,7 @@
     right: 0;
     bottom: 0;
     height: 1px;
-    background-color: $color-light;
+    background-color: $color-gray--dark;
     border-radius: 1px;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
       background-color 0.2s;
@@ -41,7 +41,7 @@
 
   p.course-type {
     font-size: 0.625rem;
-    color: $color-medium;
+    color: $color-gray--medium;
     line-height: 1.9375rem;
     letter-spacing: 0;
     margin-top: 0.95rem;
@@ -77,7 +77,7 @@
       line-height: 1.875rem;
       margin-bottom: 0;
       font-weight: 400;
-      color: $color-medium;
+      color: $color-gray--medium;
       transition: color 0.2s;
     }
   }

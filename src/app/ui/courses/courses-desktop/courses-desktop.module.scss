@@ -1,14 +1,19 @@
 @use "@/styles/variables.scss" as *;
 
 @include revealSections();
+@include fadeIn();
+@include fadeOut();
 
 .course-content {
   position: absolute;
   top: 15rem;
   max-width: 60dvw;
 
-  &.show {
-    animation: reveal-sections 1s ease-in-out forwards;
+  &.fade-out {
+    animation: fade-out 0.5s forwards;
+  }
+  &.fade-in {
+    animation: fade-in 0.5s, reveal-sections 1s;
   }
 
   h3 {
