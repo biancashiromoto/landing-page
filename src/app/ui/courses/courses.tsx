@@ -16,7 +16,9 @@ const Courses = () => {
     setSelectedArea(foundArea);
   };
 
-  if (screenWidth > 1024) {
+  if (!screenWidth) return;
+
+  if (screenWidth > 1280) {
     return (
       <>
         <div className={styles.courses}>
