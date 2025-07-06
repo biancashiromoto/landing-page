@@ -1,6 +1,9 @@
 $color-dark: #202121;
 $about: #393e41;
-$primary-red: #ed145b;
+$color-light: #454c4f;
+$color-white: #fff;
+$color-black: #000;
+$primary-red: #f0154e;
 
 @mixin fade-move($name, $fromY, $toY) {
   @keyframes #{$name} {
