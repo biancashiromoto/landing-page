@@ -12,7 +12,7 @@ export type CourseArea = {
   id: string;
 };
 
-export const courses: CourseArea[] = [
+export const areas: CourseArea[] = [
   {
     area: "Tecnologia",
     id: "TECH",
