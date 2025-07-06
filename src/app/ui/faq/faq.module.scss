@@ -1,0 +1,55 @@
+// @use "@/styles/variables.scss" as *;
+@use "@/styles/breakpoints.scss" as *;
+
+$color-red: #ed145b;
+$color-light: #d5dbd3;
+$color-gray: #949b99;
+
+.faq {
+  position: relative;
+  margin: 0 1rem 4rem 1.95rem;
+  height: 100dvh;
+
+  h2,
+  p,
+  h3 {
+    letter-spacing: 0.03rem;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 3.875rem;
+    line-height: 3.75rem;
+    padding-bottom: 2.28125rem;
+  }
+
+  p.subtitle {
+    color: $color-red;
+    font-size: 1.375rem;
+    line-height: 1.6875rem;
+    padding-bottom: 3.75rem;
+  }
+
+  @include respond(2xl) {
+    max-width: 70dvw;
+    margin: 35% auto;
+    transform: translateX(-4.4rem);
+
+    h2 {
+      font-size: 5.75rem;
+      line-height: 4.25rem;
+      padding-bottom: 1.25rem;
+    }
+
+    p.subtitle {
+      font-size: 1.375rem;
+      letter-spacing: 0.03rem;
+    }
+
+    .faq-questions {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+@use "@/styles/variables.scss" as *;
+@use "@/styles/breakpoints.scss" as *;
+
+@include scrollLeft();
+@include scrollRight();
+@include revealSections();
+@include fadeIn();
+
+.intro {
+  height: 100dvh;
+  margin-top: 100dvh;
+
+  .scroll-container {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    padding: 1rem 0;
+
+    &:not(.image-container *) {
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 100%;
+        background-color: white;
+        z-index: 1;
+      }
+    }
+
+    h2 {
+      display: inline-block;
+      font-size: 2.1875rem;
+      font-weight: 500;
+      line-height: 1.6875rem;
+      white-space: nowrap;
+      min-width: 200vw;
+      margin: 0;
+      padding: 0;
+      position: relative;
+
+      @include respond(xl) {
+        font-size: 5.1875rem;
+        padding: 1.5rem 0;
+        margin-top: 1rem;
+      }
+
+      &.left {
+        animation: scroll-left 10s linear infinite;
+
+        &:hover {
+          animation-play-state: paused;
+        }
+      }
+
+      &.right {
+        animation: scroll-right 10s linear infinite;
+        padding-top: 1rem;
+
+        &:hover {
+          animation-play-state: paused;
+        }
+      }
+    }
+  }
+
+  .image-container {
+    text-align: center;
+    width: 100dvw;
+    padding-top: 5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+
+      img {
+        animation: reveal-sections 1s ease-in-out forwards;
+      }
+    }
+
+    img {
+      transform: translateX(-1.6%);
+      width: 77dvw;
+      height: auto;
+      max-width: 1500px;
+    }
+
+    .text-container {
+      position: relative;
+      top: -11.25rem;
+
+      h3 {
+        display: inline-block;
+        font-size: 9rem;
+        font-weight: 500;
+        line-height: 1.6875rem;
+        white-space: nowrap;
+        min-width: 200vw;
+        margin: 0;
+        margin: 1.3125rem 0;
+        position: relative;
+        letter-spacing: 0.06rem;
+        color: transparent;
+        opacity: 0;
+
+        -webkit-text-stroke: 2px $color-light;
+        text-stroke: 2px $color-light;
+
+        transition: transform 0.5s ease-out;
+
+        &.left {
+          animation: fade-in 0.8s ease-out forwards,
+            scroll-left 20s linear infinite;
+        }
+
+        &.right {
+          animation: fade-in 0.8s ease-out 0.2s forwards,
+            scroll-right 20s linear infinite;
+          padding-top: 1.75rem;
+          font-style: italic;
+        }
+
+        &.stop {
+          animation-play-state: paused;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}

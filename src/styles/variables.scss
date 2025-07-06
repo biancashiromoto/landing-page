@@ -1,0 +1,130 @@
+@use "sass:color";
+
+$color-dark: #202121;
+$about: #393e41;
+$color-light: #454c4f;
+$color-medium: #8a959b;
+$color-white: #fff;
+$color-black: #000;
+$color-red: #f80d5a;
+$color-gray: #949b99;
+
+@mixin fade-move($name, $fromY, $toY) {
+  @keyframes #{$name} {
+    from {
+      opacity: 0;
+      transform: translateY(#{$fromY});
+    }
+    to {
+      opacity: 1;
+      transform: translateY(#{$toY});
+    }
+  }
+}
+
+@mixin fadeIn($name: fade-in) {
+  @keyframes #{$name} {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@function lighten-color($color, $amount: 10%) {
+  @return color.adjust($color, $lightness: 20%);
+}
+
+@mixin flashColor($name, $color-normal, $color-flash) {
+  @keyframes #{$name} {
+    0% {
+      color: $color-normal;
+    }
+    50% {
+      color: $color-flash;
+    }
+    100% {
+      color: $color-normal;
+    }
+  }
+}
+
+@mixin blurFocus($name, $from: 3px, $to: 0px) {
+  @keyframes #{$name} {
+    0% {
+      filter: blur(#{$from});
+    }
+    100% {
+      filter: blur(#{$to});
+    }
+  }
+}
+
+@mixin scrollHorizontally($name, $direction: left) {
+  @keyframes #{$name} {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(if($direction == left, -100%, 100%));
+    }
+  }
+}
+
+@mixin scrollLeft($name: scroll-left) {
+  @keyframes #{$name} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@mixin scrollRight($name: scroll-right) {
+  @keyframes #{$name} {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+@mixin revealDown($name: reveal-down) {
+  @keyframes #{$name} {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@mixin revealSections($name: reveal-sections) {
+  @keyframes #{$name} {
+    0% {
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      opacity: 0;
+    }
+    30% {
+      clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+      opacity: 1;
+    }
+    60% {
+      clip-path: polygon(0 0, 100% 0, 100% 65%, 0 65%);
+      opacity: 1;
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      opacity: 1;
+    }
+  }
+}

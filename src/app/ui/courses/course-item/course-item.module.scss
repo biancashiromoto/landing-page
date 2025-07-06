@@ -1,0 +1,83 @@
+@use "@/styles/variables.scss" as *;
+@use "@/styles/breakpoints.scss" as *;
+
+.course-item {
+  position: relative;
+  padding-bottom: 1rem;
+
+  &:last-of-type {
+    &::before {
+      display: none;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: $color-light;
+    border-radius: 1px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 0.2s;
+    z-index: 1;
+  }
+
+  p.course-type {
+    font-size: 0.625rem;
+    color: $color-medium;
+    line-height: 1.9375rem;
+    letter-spacing: 0;
+    margin-top: 0.95rem;
+  }
+
+  p.course-name {
+    font-size: 1.125rem;
+    font-family: "Pt Sans", sans-serif;
+    line-height: 1.1875rem;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  @include respond(xl) {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: start;
+    height: 3.75rem;
+    padding-bottom: 0;
+
+    p.course-type {
+      font-size: 0.8125rem;
+      line-height: 0.75rem;
+      letter-spacing: 0.07rem;
+      transform: translateY(-0.5rem);
+      margin-left: 1.5rem;
+    }
+
+    p.course-name {
+      font-size: 1.375rem;
+      line-height: 1.875rem;
+      margin-bottom: 0;
+      font-weight: 400;
+      color: $color-medium;
+      transition: color 0.2s;
+    }
+
+    &:hover::before,
+    &.selected::before {
+      background-color: $color-red;
+    }
+
+    &:hover,
+    &.selected {
+      p.course-type,
+      p.course-name {
+        color: $color-red;
+        transition: color 0.5s;
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+@use "@/styles/variables.scss" as *;
+@use "@/styles/breakpoints.scss" as *;
+@use "sass:color";
+
+@include fade-move(fadeDownFirst, -10px, 0);
+@include fade-move(fadeDown, -20px, 0);
+@include fade-move(fadeUp, 30px, 0);
+@include flashColor(flashAbout, $about, color.adjust($about, $lightness: 20%));
+@include blurFocus(blur);
+
+.header {
+  position: relative;
+  top: 50dvh;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    animation: flashAbout 0.5s ease-in-out;
+    color: $about;
+    font-weight: 900;
+    font-size: clamp(6.25rem, 10vw, 9.375rem);
+    position: absolute;
+    opacity: 0.15;
+    letter-spacing: 0.5rem;
+    text-align: right;
+    top: -4.5rem;
+    right: 1.1875rem;
+    z-index: -1;
+  }
+
+  .title {
+    width: max-content;
+    position: relative;
+    transform: translateY(0.25rem);
+
+    h1 {
+      font-weight: 500;
+      letter-spacing: -0.05rem;
+      width: max-content;
+      position: static;
+      left: auto;
+      top: auto;
+      font-size: 1.75rem;
+      line-height: 0.5;
+
+      &:first-of-type {
+        animation: blur 0.3s, fadeDownFirst 0.3s ease-in-out;
+      }
+
+      &:last-of-type {
+        animation: fadeDown 0.6s ease-in-out;
+      }
+    }
+  }
+}
+
+@include respond(md) {
+  .header {
+    span {
+      font-size: 9.375rem;
+      line-height: 10rem;
+      transform: translate(0.5rem, -2.5rem);
+    }
+
+    .title {
+      transform: translateX(-2.75%);
+      h1 {
+        font-size: 2.25rem;
+
+        &:last-of-type {
+          margin-left: -3.5%;
+        }
+      }
+    }
+  }
+}
+
+@include respond(lg) {
+  .header {
+    span {
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+    }
+
+    .title {
+      left: 50%;
+      right: auto;
+      transform: translate(-50dvw, 2.5rem);
+    }
+  }
+}
+
+@include respond(5xl) {
+  .header {
+    top: 60dvh;
+    span {
+      font-size: 21.875rem;
+      letter-spacing: -0.1rem;
+    }
+
+    .title {
+      transform: translate(-50dvw, -12rem);
+
+      h1 {
+        font-size: 6.875rem;
+        line-height: 5rem;
+      }
+    }
+  }
+}
