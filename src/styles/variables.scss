@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $color-dark: #202121;
 $about: #393e41;
 $color-light: #454c4f;
@@ -31,7 +33,7 @@ $color-red: #f80d5a;
 }
 
 @function lighten-color($color, $amount: 10%) {
-  @return lighten($color, $amount);
+  @return color.adjust($color, $lightness: 20%);
 }
 
 @mixin flashColor($name, $color-normal, $color-flash) {
