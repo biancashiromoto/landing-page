@@ -5,11 +5,6 @@
   position: relative;
   transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-  &.open {
-    max-height: 1000px;
-    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
   &::after {
     content: "";
     position: absolute;
@@ -21,31 +16,25 @@
     background-color: $color-medium;
   }
 
-  .course-area-header {
-    label {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 2rem;
-      cursor: pointer;
-      width: auto;
-    }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+    width: auto;
 
-    h3.course-area-title {
+    h3.title {
       font-size: 1.875rem;
       line-height: 1.875rem;
     }
 
-    input[type="checkbox"] {
-      display: none;
-    }
-
-    .custom-checkbox {
+    button {
       width: 2.5rem;
       height: 2.5rem;
       border-radius: 50%;
-      background: $color-red;
+      background-color: $color-red;
       display: flex;
+      font-size: 1.875rem;
       align-items: center;
       justify-content: center;
       position: relative;
@@ -57,46 +46,16 @@
         height: 3.7rem;
       }
     }
-
-    .custom-checkbox.checked {
-      background: $color-black;
-      border: solid 1px $color-red;
-
-      &::after {
-        content: "+";
-        display: block;
-        color: $color-black;
-        border-radius: 3px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        font-size: 2.125rem;
-        transform: translate(-50%, -52.5%);
-        -webkit-text-stroke: 1px $color-red;
-      }
-    }
-
-    .custom-checkbox::after {
-      content: "-";
-      display: block;
-      color: $color-black;
-      border-radius: 3px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      font-size: 2.125rem;
-      transform: translate(-50%, -52.5%);
-    }
   }
 
-  .course-area-content {
+  .content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &.open {
-    .course-area-content {
+    .content {
       max-height: 1000px;
       transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }

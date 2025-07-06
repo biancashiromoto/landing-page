@@ -19,24 +19,18 @@ const CourseArea = (props: CourseAreaProps) => {
 
   return (
     <div className={`${styles["course-area"]} ${isOpen ? styles["open"] : ""}`}>
-      <div className={styles["course-area-header"]}>
-        <label>
-          <h3 className={styles["course-area-title"]}>
-            {courseArea.area.toUpperCase()}
-          </h3>
-          <input
-            type="checkbox"
-            aria-label={isOpen ? "Expandir" : "Recolher"}
-            onChange={toggleOpenAccordion}
-          />
-          <span
-            className={`${styles["custom-checkbox"]} ${
-              isOpen ? styles["checked"] : ""
-            }`}
-          ></span>
-        </label>
+      <div className={styles["header"]}>
+        <h3 className={styles["title"]}>{courseArea.area.toUpperCase()}</h3>
+        <button
+          type="button"
+          onClick={toggleOpenAccordion}
+          aria-label={isOpen ? "Expandir" : "Recolher"}
+          className={isOpen ? styles["checked"] : ""}
+        >
+          {isOpen ? "-" : "+"}
+        </button>
       </div>
-      <div className={styles["course-area-content"]}>
+      <div className={styles["content"]}>
         {courseArea.items.map((item: Course) => (
           <CourseItem key={item.id} {...item} />
         ))}
