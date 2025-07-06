@@ -19,8 +19,9 @@
 
 .logoFiap {
   cursor: pointer;
-  width: 9rem;
-  height: 2.4375rem;
+  width: 5.25rem;
+  height: 1.4375rem;
+
   transform: translateY(2rem);
   transition: width 0.3s, height 0.3s;
 
@@ -35,7 +36,8 @@
   }
 
   @include respond(5xl) {
-    width: 5.25rem;
-    height: 1.4375rem;
+    width: 9rem;
+    height: 2.4375rem;
+    margin-top: -0.625rem;
   }
 }
