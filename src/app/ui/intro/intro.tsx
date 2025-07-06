@@ -8,18 +8,21 @@ import useIntro from "./useIntro";
 const Intro = () => {
   const { isVisible, isScrolling, imageRef, screenWidth } = useIntro();
 
+  const text1 = "CURSOS E IMERSÕES. UMA NOVA CULTURA DE MERCADO";
+  const text2 = "TECNOLOGIA, INOVAÇÃO E NEGÓCIOS. PRESENTE E FUTURO.";
+  const text3 = "CONHECIMENTO • SKILLS";
+  const text4 = "MUITO. MUITO ALÉM DOS TUTORIAIS";
+
   return (
     <div className={styles.intro}>
       <div className={styles["scroll-container"]}>
         <h2 className={styles.left}>
-          CURSOS E IMERSÕES. UMA NOVA CULTURA DE MERCADO&nbsp;CURSOS E IMERSÕES.
-          UMA NOVA CULTURA DE MERCADO
+          {`${text1} • ${text1} • ${text1} • ${text1} • ${text1} • ${text1}`}
         </h2>
       </div>
       <div className={styles["scroll-container"]}>
         <h2 className={styles.right}>
-          TECNOLOGIA, INOVAÇÃO E NEGÓCIOS. PRESENTE E FUTURO.&nbsp;TECNOLOGIA,
-          INOVAÇÃO E NEGÓCIOS. PRESENTE E FUTURO.
+          {`${text2} • ${text2} • ${text2} • ${text2} • ${text2} • ${text2}`}
         </h2>
       </div>
 
@@ -36,17 +39,17 @@ const Intro = () => {
             <div className={styles["scroll-container"]}>
               <h3
                 className={`${styles.left} ${isScrolling ? styles.stop : ""}`}
-                data-text="CONHECIMENTO • SKILLS"
+                data-text={`${text3} • ${text3} • ${text3} • ${text3} • ${text3} • ${text3}`}
               >
-                CONHECIMENTO • SKILLS
+                {`${text3} • ${text3} • ${text3} • ${text3} • ${text3} • ${text3}`}
               </h3>
             </div>
             <div className={styles["scroll-container"]}>
               <h3
                 className={`${styles.right} ${isScrolling ? styles.stop : ""}`}
-                data-text="MUITO. MUITO ALÉM DOS TUTORIAIS"
+                data-text={`${text4} • ${text4} • ${text4} • ${text4} • ${text4} • ${text4}`}
               >
-                MUITO. MUITO ALÉM DOS TUTORIAIS
+                {`${text4} • ${text4} • ${text4} • ${text4} • ${text4} • ${text4}`}
               </h3>
             </div>
           </div>
