@@ -1,24 +1,17 @@
 "use client";
 
-import { CourseArea as CourseAreaType, courses, Course } from "@/text";
-import styles from "./courses.module.scss";
-import { useCustomContext } from "@/context/Provider";
-import { useState } from "react";
+import { Course, CourseArea as CourseAreaType, courses } from "@/text";
 import CourseArea from "./course-area/course-area";
 import CourseItem from "./course-item/course-item";
+import styles from "./courses.module.scss";
+import useCourses from "./useCourses";
 
 const Courses = () => {
-  const { screenWidth } = useCustomContext();
-  const [selectedArea, setSelectedArea] = useState<CourseAreaType | null>(null);
-
-  const handleAreaClick = (area: CourseAreaType["area"]) => {
-    const foundArea = courses.find((course) => course.area === area) || null;
-    setSelectedArea(foundArea);
-  };
+  const { screenWidth, selectedArea, handleAreaClick } = useCourses();
 
   if (!screenWidth) return;
 
-  if (screenWidth > 1280) {
+  if (screenWidth > 1024) {
     return (
       <>
         <div className={styles.courses}>
