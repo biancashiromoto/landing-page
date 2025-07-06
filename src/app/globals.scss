@@ -1,3 +1,5 @@
+@use "@/styles/variables.scss" as *;
+
 @font-face {
   font-family: "Gotham HTF";
   src: url("/fonts/gotham/gotham-htf-ultra.woff2") format("woff2"),
@@ -54,27 +56,15 @@
   font-style: normal;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: $color-black;
+  color: $color-white;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: "Gotham HTF", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
