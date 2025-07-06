@@ -1,29 +1,34 @@
 import { useCustomContext } from "@/context/Provider";
 import { useEffect, useState } from "react";
 import {
-  CourseAreaType as CourseAreaType,
-  areas,
-} from "@/app/ui/courses/areas";
+  SubjectType as SubjectType,
+  subjects,
+} from "@/app/ui/courses/subjects";
 
 const useCourses = () => {
   const { screenWidth } = useCustomContext();
-  const [selectedArea, setSelectedArea] = useState<CourseAreaType | null>(null);
+  const [selectedSubject, setSelectedSubject] = useState<SubjectType | null>(
+    null
+  );
+  const isMobileOrTablet = screenWidth <= 1280;
 
-  const handleAreaClick = (area: CourseAreaType["area"]) => {
-    const foundArea = areas.find((course) => course.area === area) || null;
-    setSelectedArea(foundArea);
+  const handleSelectSubject = (subject: SubjectType["subject"]) => {
+    const foundSubject =
+      subjects.find((course) => course.subject === subject) ?? null;
+    setSelectedSubject(foundSubject);
   };
 
   useEffect(() => {
-    if (screenWidth > 1024 && !selectedArea) {
-      setSelectedArea(areas[0]);
+    if (screenWidth > 1024 && !selectedSubject) {
+      setSelectedSubject(subjects[0]);
     }
-  }, [screenWidth, selectedArea]);
+  }, [screenWidth, selectedSubject]);
 
   return {
-    handleAreaClick,
+    handleSelectSubject,
     screenWidth,
-    selectedArea,
+    selectedSubject,
+    isMobileOrTablet,
   };
 };
 

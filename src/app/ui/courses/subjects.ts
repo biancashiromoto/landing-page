@@ -6,15 +6,15 @@ export type Course = {
   id: string;
 };
 
-export type CourseAreaType = {
-  area: string;
+export type SubjectType = {
+  subject: string;
   items: Course[];
   id: string;
 };
 
-export const areas: CourseAreaType[] = [
+export const subjects: SubjectType[] = [
   {
-    area: "Tecnologia",
+    subject: "Tecnologia",
     id: "TECH",
     items: [
       {
@@ -40,7 +40,7 @@ export const areas: CourseAreaType[] = [
     ],
   },
   {
-    area: "Inovação",
+    subject: "Inovação",
     id: "INOV",
     items: [
       {
@@ -66,7 +66,7 @@ export const areas: CourseAreaType[] = [
     ],
   },
   {
-    area: "Negócios",
+    subject: "Negócios",
     id: "NEGO",
     items: [
       {

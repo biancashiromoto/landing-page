@@ -1,16 +1,16 @@
 "use client";
 
-import { Course, CourseAreaType } from "@/app/ui/courses/areas";
+import { Course, SubjectType } from "@/app/ui/courses/subjects";
 import CourseItem from "../course-item/course-item";
-import styles from "./course-area.module.scss";
+import styles from "./subject-list.module.scss";
 import { useState } from "react";
 
-type CourseAreaProps = {
-  courseArea: CourseAreaType;
+type SubjectListProps = {
+  subject: SubjectType;
 };
 
-const CourseArea = (props: CourseAreaProps) => {
-  const { courseArea } = props;
+const SubjectList = (props: SubjectListProps) => {
+  const { subject } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpenAccordion = () => {
@@ -18,9 +18,11 @@ const CourseArea = (props: CourseAreaProps) => {
   };
 
   return (
-    <div className={`${styles["course-area"]} ${isOpen ? styles["open"] : ""}`}>
+    <div
+      className={`${styles["subject-list"]} ${isOpen ? styles["open"] : ""}`}
+    >
       <div className={styles["header"]}>
-        <h3 className={styles["title"]}>{courseArea.area.toUpperCase()}</h3>
+        <h3 className={styles["title"]}>{subject.subject.toUpperCase()}</h3>
         <button
           type="button"
           onClick={toggleOpenAccordion}
@@ -31,7 +33,7 @@ const CourseArea = (props: CourseAreaProps) => {
         </button>
       </div>
       <div className={styles["content"]}>
-        {courseArea.items.map((item: Course) => (
+        {subject.items.map((item: Course) => (
           <CourseItem key={item.id} {...item} />
         ))}
       </div>
@@ -39,4 +41,4 @@ const CourseArea = (props: CourseAreaProps) => {
   );
 };
 
-export default CourseArea;
+export default SubjectList;

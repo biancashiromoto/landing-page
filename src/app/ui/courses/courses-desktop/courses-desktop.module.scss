@@ -1,0 +1,21 @@
+@use "@/styles/variables.scss" as *;
+
+@include revealSections();
+
+.course-content {
+  position: absolute;
+  top: 15rem;
+  max-width: 60dvw;
+
+  &.show {
+    animation: reveal-sections 1s ease-in-out forwards;
+  }
+
+  h3 {
+    font-size: 3.4375rem;
+    letter-spacing: 0.03rem;
+    line-height: 1.875rem;
+    font-weight: 500;
+    margin: 1rem 0 7.8125rem;
+  }
+}

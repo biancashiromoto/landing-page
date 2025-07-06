@@ -1,7 +1,7 @@
 @use "@/styles/variables.scss" as *;
 @use "@/styles/breakpoints.scss" as *;
 
-.course-area {
+.subject-list {
   position: relative;
   transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
