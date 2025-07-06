@@ -17,7 +17,7 @@
 
 .courses {
   position: relative;
-  margin: 0 1rem 0 1.95rem;
+  margin: 25rem 1rem 0 1.95rem;
   height: 100dvh;
 
   h2,
@@ -40,12 +40,13 @@
     padding-bottom: 3.75rem;
   }
 
-  @include respond(lg) {
+  @include respond(2xl) {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     max-width: 70dvw;
-    margin: 20dvh 1rem 0 1.95rem;
+    margin: 20dvh auto;
+    transform: translateX(-4.4rem);
 
     h2 {
       font-size: 5.75rem;

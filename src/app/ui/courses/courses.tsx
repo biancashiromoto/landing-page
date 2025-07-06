@@ -16,7 +16,7 @@ const Courses = () => {
     setSelectedArea(foundArea);
   };
 
-  if (screenWidth > 768) {
+  if (screenWidth > 1024) {
     return (
       <>
         <div className={styles.courses}>
@@ -57,8 +57,10 @@ const Courses = () => {
 
   return (
     <div className={styles.courses}>
-      <h2>Cursos</h2>
-      <p className={styles["subtitle"]}>Cursos de curta duração</p>
+      <div className={styles.header}>
+        <h2>Cursos</h2>
+        <p className={styles["subtitle"]}>Cursos de curta duração</p>
+      </div>
       <div>
         {courses.map((course: CourseAreaType) => {
           return <CourseArea key={course.id} courseArea={course} />;
