@@ -62,6 +62,14 @@ body {
   overflow-x: hidden;
   background-color: $color-black;
   color: $color-white;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 body {
