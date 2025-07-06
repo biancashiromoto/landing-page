@@ -18,6 +18,17 @@ $primary-red: #f0154e;
   }
 }
 
+@mixin fadeIn($name: fade-in) {
+  @keyframes #{$name} {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
 @function lighten-color($color, $amount: 10%) {
   @return lighten($color, $amount);
 }
