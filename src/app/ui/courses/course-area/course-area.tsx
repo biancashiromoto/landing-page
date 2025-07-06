@@ -25,7 +25,7 @@ const CourseArea = (props: CourseAreaProps) => {
           type="button"
           onClick={toggleOpenAccordion}
           aria-label={isOpen ? "Expandir" : "Recolher"}
-          className={isOpen ? styles["checked"] : ""}
+          className={!isOpen ? styles["open"] : ""}
         >
           {isOpen ? "-" : "+"}
         </button>
