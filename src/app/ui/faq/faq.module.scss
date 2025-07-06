@@ -32,7 +32,7 @@ $color-gray: #949b99;
 
   @include respond(2xl) {
     max-width: 70dvw;
-    margin: 20dvh auto;
+    margin: 35% auto;
     transform: translateX(-4.4rem);
 
     h2 {
