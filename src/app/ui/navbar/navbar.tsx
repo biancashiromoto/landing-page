@@ -16,14 +16,15 @@ export default function Navbar() {
       style={{ top: `${navbarTop}px` }}
       role="navigation"
       aria-label="Barra de navegação"
-      tabIndex={0}
     >
-      <Image
-        src={LogoFiap}
-        alt="Logo da FIAP"
-        className={styles.logoFiap}
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      />
+      <a href="#main-content" aria-label="Voltar ao topo">
+        <Image
+          src={LogoFiap}
+          alt="Logo da FIAP"
+          className={styles.logoFiap}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        />
+      </a>
       <ScrollProgressBar navbarTop={navbarTop} navbarHeight={navbarHeight} />
     </nav>
   );
