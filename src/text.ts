@@ -9,11 +9,13 @@ export type Course = {
 export type CourseArea = {
   area: string;
   items: Course[];
+  id: string;
 };
 
 export const courses: CourseArea[] = [
   {
     area: "Tecnologia",
+    id: "TECH",
     items: [
       {
         name: "Big Data Ecosystem",
@@ -39,6 +41,7 @@ export const courses: CourseArea[] = [
   },
   {
     area: "Inovação",
+    id: "INOV",
     items: [
       {
         name: "UX",
@@ -64,6 +67,7 @@ export const courses: CourseArea[] = [
   },
   {
     area: "Negócios",
+    id: "NEGO",
     items: [
       {
         name: "Agile Culture",
