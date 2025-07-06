@@ -5,7 +5,7 @@ import Courses from "./ui/courses/courses";
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <Navbar />
       <Header />
       <Intro />
