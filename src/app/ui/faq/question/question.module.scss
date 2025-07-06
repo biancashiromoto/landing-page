@@ -1,13 +1,25 @@
-// @use "@/styles/variables.scss" as *;
+@use "@/styles/variables.scss" as *;
 @use "@/styles/breakpoints.scss" as *;
 
-$color-red: #ed145b;
-$color-light: #d5dbd3;
-$color-gray: #949b99;
+@include fade-move(answer-fade-in, 15px, 0px);
+@include fade-move(answer-fade-out, 0px, -10px);
 
 .question {
   position: relative;
   padding: 1rem 0 0;
+  min-height: 5.885625rem;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  & > summary {
+    list-style: none;
+  }
+
+  & > summary::-webkit-details-marker {
+    display: none;
+  }
 
   &::before {
     content: "";
@@ -35,27 +47,38 @@ $color-gray: #949b99;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(15px);
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  &.open p {
+  &.open p,
+  &[open] p {
     max-height: 200px;
     opacity: 1;
-    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+    animation: answer-fade-in 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  h3 {
+  summary {
     font-size: 1.25rem;
     line-height: 1.5rem;
     font-weight: 500;
     letter-spacing: 0.01rem;
     color: $color-gray;
+    cursor: pointer;
+    outline: none;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   &:hover,
-  .open {
+  &.open,
+  &[open] {
     &::before {
       content: "";
       position: absolute;
@@ -67,8 +90,9 @@ $color-gray: #949b99;
       background-color: $color-red;
       opacity: 0.5;
     }
-    h3 {
-      color: $color-light;
+
+    summary {
+      color: $color-offwhite;
       transition: color 0.2s;
     }
   }
@@ -85,7 +109,7 @@ $color-gray: #949b99;
       padding-bottom: 0;
     }
 
-    h3 {
+    summary {
       font-size: 1.25rem;
       line-height: 1.1875rem;
       margin-bottom: 0.875rem;

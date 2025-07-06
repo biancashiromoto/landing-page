@@ -10,11 +10,11 @@ const FAQ = () => {
 
   return (
     <div className={styles.faq}>
-      <div className={styles["faq-header"]}>
+      <div className={styles["header"]}>
         <h2>FAQ</h2>
         <p className={styles["subtitle"]}>Dúvidas Frequentes</p>
       </div>
-      <div className={styles["faq-questions"]}>
+      <div className={styles["questions"]}>
         {questions.map((question: QuestionType, index: number) => (
           <Question
             key={index}
