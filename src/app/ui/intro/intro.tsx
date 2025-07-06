@@ -44,9 +44,9 @@ const Intro = () => {
             <div className={styles["scroll-container"]}>
               <h3
                 className={`${styles.right} ${isScrolling ? styles.stop : ""}`}
-                data-text="MUITO ALÉM DOS TUTORIAIS"
+                data-text="MUITO. MUITO ALÉM DOS TUTORIAIS"
               >
-                MUITO ALÉM DOS TUTORIAIS
+                MUITO. MUITO ALÉM DOS TUTORIAIS
               </h3>
             </div>
           </div>
