@@ -7,14 +7,14 @@ export type Course = {
 };
 
 export type SubjectType = {
-  subject: string;
+  name: string;
   items: Course[];
   id: string;
 };
 
 export const subjects: SubjectType[] = [
   {
-    subject: "Tecnologia",
+    name: "Tecnologia",
     id: "TECH",
     items: [
       {
@@ -40,7 +40,7 @@ export const subjects: SubjectType[] = [
     ],
   },
   {
-    subject: "Inovação",
+    name: "Inovação",
     id: "INOV",
     items: [
       {
@@ -66,7 +66,7 @@ export const subjects: SubjectType[] = [
     ],
   },
   {
-    subject: "Negócios",
+    name: "Negócios",
     id: "NEGO",
     items: [
       {
