@@ -5,7 +5,7 @@ import styles from "./subject-navbar.module.scss";
 
 type SubjectNavbarProps = {
   selectedSubject: SubjectType | null;
-  handleSelectSubject: (subject: SubjectType["subject"]) => void;
+  handleSelectSubject: (subjectId: SubjectType["id"]) => void;
 };
 
 const SubjectNavbar = ({
@@ -17,12 +17,10 @@ const SubjectNavbar = ({
       {subjects.map((course: SubjectType) => (
         <p
           key={course.id}
-          onClick={() => handleSelectSubject(course.subject)}
-          className={
-            selectedSubject?.subject === course.subject ? styles.selected : ""
-          }
+          onClick={() => handleSelectSubject(course.id)}
+          className={selectedSubject?.id === course.id ? styles.selected : ""}
         >
-          {course.subject.toUpperCase()}
+          {course.name.toUpperCase()}
         </p>
       ))}
     </nav>

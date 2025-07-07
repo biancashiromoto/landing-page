@@ -43,7 +43,7 @@ const CoursesDesktop = ({ selectedSubject }: CoursesDesktopProps) => {
         `${styles["course-content"]} ` + (fadeState ? styles[fadeState] : "")
       }
     >
-      <h3>{displayedSubject?.subject}</h3>
+      <h3>{displayedSubject?.name}</h3>
       {displayedSubject?.items.map((item: Course) => (
         <CourseItem key={item.id} {...item} />
       ))}

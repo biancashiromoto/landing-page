@@ -18,9 +18,8 @@ const useCourses = () => {
   );
   const isMobileOrTablet = screenWidth <= 1280;
 
-  const handleSelectSubject = (subject: SubjectType["subject"]) => {
-    const foundSubject =
-      subjects.find((course) => course.subject === subject) ?? null;
+  const handleSelectSubject = (subject: SubjectType["id"]) => {
+    const foundSubject = subjects.find((item) => item.id === subject) ?? null;
     setSelectedSubject(foundSubject);
   };
 

@@ -22,7 +22,7 @@ const SubjectList = (props: SubjectListProps) => {
       className={`${styles["subject-list"]} ${isOpen ? styles["open"] : ""}`}
     >
       <div className={styles["header"]}>
-        <h3 className={styles["title"]}>{subject.subject.toUpperCase()}</h3>
+        <h3 className={styles["title"]}>{subject.name.toUpperCase()}</h3>
         <button
           type="button"
           onClick={toggleOpenAccordion}
